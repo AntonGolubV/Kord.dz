@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    
+
+    <script>
+
+        
+        let h1 = document.getElementsByTagName('h1');
+        let h2 = document.getElementsByTagName('h2');
+        let h3 = document.getElementsByTagName('h3');
+        let h4 = document.getElementsByTagName('h4');
+        let h5 = document.getElementsByTagName('h5');
+        let h6 = document.getElementsByTagName('h6');
+
+        let count = 1;
+
+        let creater = setInterval(function(){ 
+            if(count == 11) clearInterval(creater);
+            let val = randomValue();
+            let el = document.createElement(`h${val}`);
+            el.innerText = `я заголовок h${val}`;
+            if(!count){
+                document.body.prepend(el);
+            }  
+            else if (val == 1){
+                if(!h1.length){
+                    document.body.prepend(el)
+                } else {
+                    h1[h1.length - 1].after(el);
+                }
+            } else if (val == 2){
+                if(!h2.length && !h1.length){
+                    document.body.prepend(el);
+                }
+                else if (h2.length){
+                    h2[h2.length - 1].after(el);
+                } 
+                else if (!h2.length && h1.length){
+                    h1[h1.length - 1].after(el);
+                }
+            } else if (val == 3){
+                if(!h2.length && !h1.length && !h3.length){
+                    document.body.prepend(el)
+                }else if (h3.length){
+                    h3[h3.length - 1].after(el);
+                } else if (h2.length && !h1.length && !h3.length){
+                    h2[h2.length - 1].after(el);
+                } else if (!h2.length && h1.length && !h3.length){
+                    h1[h1.length - 1].after(el);
+                };
+            } else if(val == 4){
+                if(!h2.length && !h1.length && !h3.length && !h4.length){
+                    document.body.prepend(el)
+                }else if (h4.length){
+                    h4[h4.length - 1].after(el);
+                }else if(!h1.length && !h2.length && h3.length && !h4.length){
+                    h3[h3.length - 1].after(el);
+                } else if (h2.length && !h1.length && !h3.length && !h4.length){
+                    h2[h2.length - 1].after(el);
+                } else if (!h2.length && h1.length && !h3.length && !h4.length){
+                    h1[h1.length - 1].after(el);
+                };
+            } else if(val == 5){
+                if(!h2.length && !h1.length && !h3.length && !h4.length && !h5.length){
+                    document.body.prepend(el)
+                }else if (h5.length){
+                    h5[h5.length - 1].after(el);
+                } else if(!h1.length && !h2.length && !h3.length && h4.length && !h5.length){
+                    h4[h4.length - 1].after(el);
+                }else if(!h1.length && !h2.length && h3.length && !h4.length && !h5.length){
+                    h3[h3.length - 1].after(el);
+                } else if (h2.length && !h1.length && !h3.length && !h4.length && !h5.length){
+                    h2[h2.length - 1].after(el);
+                } else if (!h2.length && h1.length && !h3.length && !h4.length && !h5.length){
+                    h1[h1.length - 1].after(el);
+                };
+            } else if(val == 6){
+                if(!h2.length && !h1.length && !h3.length && !h4.length && !h5.length && !h6.length){
+                    document.body.prepend(el)
+                }else if (h6.length){
+                    h6[h6.length - 1].after(el);
+                } else if(!h1.length && !h2.length && !h3.length && !h4.length && h5.length && !h6.length){
+                    h5[h5.length - 1].after(el);
+                }else if(!h1.length && !h2.length && !h3.length && h4.length && !h5.length && !h6.length){
+                    h4[h4.length - 1].after(el);
+                }else if(!h1.length && !h2.length && h3.length && !h4.length && !h5.length && !h6.length){
+                    h3[h3.length - 1].after(el);
+                } else if (h2.length && !h1.length && !h3.length && h4.length && !h5.length && !h6.length){
+                    h2[h2.length - 1].after(el);
+                } else if (!h2.length && h1.length && !h3.length && !h4.length && !h5.length && !h6.length){
+                    h1[h1.length - 1].after(el);
+                };
+            }
+            count++;
+            console.log(count);
+            
+           
+       }, 1000);
+
+       function randomValue(){
+            return Math.ceil(Math.random() * 6);
+        }
+
+
+    </script>
+</body>
+</html>

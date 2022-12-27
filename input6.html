@@ -1,0 +1,110 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <style> 
+        *{ 
+            box-sizing: border-box; 
+        } 
+        body{ 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        } 
+        .container{ 
+            width: 1100px; 
+            height: 670px; 
+            border: 2px solid black; 
+            position: relative; 
+        } 
+        .circle{ 
+            width: 50px; 
+            height: 50px; 
+            background-color: red; 
+            border: 1px solid black; 
+            border-radius: 50%; 
+            position: absolute; 
+             
+        } 
+    </style> 
+</head> 
+<body> 
+    <script> 
+        let SquareCont = document.createElement('div');  
+        SquareCont.classList.add('container'); 
+        document.body.append(SquareCont); 
+        let circle = document.createElement('div'); 
+        circle.classList.add('circle'); 
+        SquareCont.append(circle); 
+        circle.style.left =`${Math.ceil(Math.random() * (1100) - (0) + (0))}px`;
+        circle.style.top = `${Math.ceil(Math.random() * (670) - (0) + (0))}px`;
+        let value = document.querySelector('.circle'); 
+ 
+        let val; 
+         
+        let widthBlock = parseInt(getComputedStyle(SquareCont).width); 
+        let heightBlock = parseInt(getComputedStyle(SquareCont).height); 
+ 
+        let widthCircle = parseInt(getComputedStyle(circle).width); 
+        let heightCircle = parseInt(getComputedStyle(circle).height); 
+ 
+ 
+        function randomValue(val){ 
+            return Math.floor(Math.random() * val); 
+        } 
+ 
+        let moveCircleRow = 0; 
+        let moveCircleColum = 0; 
+        let directionMove = 0; 
+ 
+        let start = setInterval(function(){ 
+            moveCircleRow = randomValue(2); 
+            moveCircleColum = randomValue(2); 
+            directionMove = randomValue(2); 
+        },2000); 
+ 
+        setInterval(function(){ 
+            let leftValue =  parseInt(getComputedStyle(circle).left); 
+            let topValue = parseInt(getComputedStyle(circle).top); 
+ 
+            if(directionMove == 0){ 
+                if(moveCircleRow === 0){ 
+                    circle.style.left = `${leftValue + 1}px`; 
+                     
+                } 
+                if(moveCircleRow === 1){ 
+                    circle.style.left = `${leftValue - 1}px`; 
+                     
+                } 
+                if(leftValue > widthBlock - widthCircle){ 
+                    moveCircleRow = 1 
+                } 
+                if(leftValue < 0){ 
+                    moveCircleRow = 0; 
+                } 
+            } 
+            if(directionMove == 1){ 
+                if(moveCircleColum === 0){ 
+                    circle.style.top = `${topValue + 1}px`; 
+                     
+                } 
+                if(moveCircleColum === 1){ 
+                    circle.style.top = `${topValue - 1}px`; 
+                     
+                } 
+                if(topValue > heightBlock - heightCircle){ 
+                    moveCircleColum = 1 
+                } 
+                if(topValue < 0){ 
+                    moveCircleColum = 0; 
+                } 
+            } 
+        }, 5); 
+    </script> 
+</body> 
+</html>
+</html>

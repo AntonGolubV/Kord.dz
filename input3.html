@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            width: 200px;
+            height: 200px;
+            background-color: aqua ;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+        div div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            font-size: 30px;
+        }
+      .vas{
+        font-size: 19px;
+      }
+    </style>
+</head>
+<body>
+    
+       <!--  <h1 class="vas">Hello,</h1> -->
+       
+        <input type="text" value="" id="input1">
+        <input type="text" value="" id="input2">
+       
+        <h1 id="header1"></h1>
+        <h1 id="header2"></h1>
+  <!--   <DIV>
+        <div>1</div>
+        <div>2</div>
+        <div id="badabum">3</div>
+        <div>4</div>
+        <div>5</div>
+    </DIV> -->
+    <script>
+        /* let header = document.querySelector('h1'); */
+        /* console.log(header.innerText); */
+      /*   header.innerText = 'привет';
+        let container = document.querySelector('div'); */
+        /* 
+        console.log(container.innerHTML);
+
+        container.innerHTML = '<h3>текст</h3>' */
+
+        /* let bodyContainer = document.querySelector('body'); */
+        /* console.log(bodyContainer.textContent); */
+ 
+       /*  header.id = '123';
+        header.title = 'oiurgjiowujg';
+        header.className = ''; */
+        /* let badabum = document.querySelector('#badabum');
+        let newEl = document.createElement('div');
+        newEl.style.borderRadius = '50%';
+        newEl.classList.add('container');
+        newEl.innerText = 'circle';
+        badabum.before(newEl);
+        badabum.after(newEl);
+        badabum.remove(); */
+      /*   bodyContainer.append(newEl); */
+         /* container.prepend(newEl); */
+
+/* 
+         let vas = document.querySelector('.vas');
+        let val = prompt('Введите своё имя');
+        vas.innerText = Привет, ${val};
+        console.log(vas.innerText);
+
+        let arr = [
+            {
+                gender:'М',
+                name:'Vasia'
+            },
+            {
+                gender:'Ж',
+                name:'Даша'
+            },
+            {
+                gender:'Ж',
+                name:'Маша'
+            }
+        ];
+       */
+
+       let input = document.querySelector('#input1');
+       console.log(input.value);
+       let header = document.querySelector('#header1');
+       console.log(header);
+        let input1 = document.querySelector('#input2');
+        console.log(input1.value);
+        let header1 = document.querySelector('#header2');
+        console.log(header1);
+       setInterval(() => {
+        header.innerText = input.value;
+        
+       },);
+       setInterval(() => {
+        header1.innerText = input1.value;
+        
+       },);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            font-size: 100px;
+            color: white;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            align-items: center;
+            font-size: scale();
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let el = document.createElement('div');
+        
+        el.classList.add('circle');
+        let elem = document.querySelector('.circle');
+       let val = 10;
+       let val1 = 100;
+       let val2 = 1;
+        let start = setInterval(()=>{
+            el.innerText = val;
+            el.style.fontSize = (`${val1-(10*val2)}px`);
+            val = val - 1;
+            val2++;
+            /* debugger; */
+          console.log(val);
+            
+        },1000); 
+         
+         setTimeout(() =>  clearInterval(start), 10000); 
+        document.body.append(el);
+    </script>
+</body>
+</html>
